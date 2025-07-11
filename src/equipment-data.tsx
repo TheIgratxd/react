@@ -1,7 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function Equipment() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/");
+  };
   return (
     <>
       <header>
@@ -12,43 +18,41 @@ function Equipment() {
           style={{ backgroundSize: "cover" }}
         />
       </header>
-      <a href="../auth/login.html">
-        <button className="btn-derecha">
-          <span className="icono">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="28"
-              height="28"
-              fill="white"
-              viewBox="0 0 24 24"
-            >
-              <rect
-                x="2"
-                y="4"
-                width="13"
-                height="16"
-                rx="2"
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
-              />
-              <path
-                d="M9 12h11m0 0l-3-3m3 3l-3 3"
-                stroke="white"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
-          <span className="texto">
-            CERRAR
-            <br />
-            SESIÓN
-          </span>
-        </button>
-      </a>
+      <button className="btn-derecha" onClick={handleLogout}>
+        <span className="icono">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="white"
+            viewBox="0 0 24 24"
+          >
+            <rect
+              x="2"
+              y="4"
+              width="13"
+              height="16"
+              rx="2"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+            />
+            <path
+              d="M9 12h11m0 0l-3-3m3 3l-3 3"
+              stroke="white"
+              strokeWidth="2"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+        <span className="texto">
+          CERRAR
+          <br />
+          SESIÓN
+        </span>
+      </button>
       <main>
         <br />
         <br />

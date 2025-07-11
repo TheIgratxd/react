@@ -1,11 +1,19 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function App() {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Aquí puedes agregar validación de login si es necesario
+    navigate("/equipment");
   };
 
   return (
@@ -33,7 +41,7 @@ function App() {
           <div className="split-content">
             <h1>Registro Computo</h1>
             <br />
-            <form action="equipment-data.tsx" method="get">
+            <form onSubmit={handleLogin}>
               <div className="agrupacion-inputs">
                 <img src="/logo_persona.jpeg" alt="Logo" className="logo" />
                 <div className="input-usuario-Contraseña">
