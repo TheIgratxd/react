@@ -1,198 +1,99 @@
-
 import { useNavigate } from "react-router-dom";
+import Header from "./components/Header";
+import UserProfile from "./components/UserProfile";
+import EquipmentTable from "./components/EquipmentTable";
+import Button from "./components/Button";
 import "./App.css";
 
 function Equipment() {
   const navigate = useNavigate();
 
+  // Datos del usuario (en el futuro vendrán de la BD)
+  const userData = {
+    empleado: "12345",
+    nombres: "Alejandro",
+    apellidos: "Rodríguez Perez",
+    puesto: "Secretario",
+    area: "1",
+    correo: "alejandro123@gmail.com",
+    telefono: "55 1234 1234",
+    extension: "1234",
+    piso: "5",
+  };
+
+  // Datos de equipos (en el futuro vendrán de la BD)
+  const desktopData = [
+    {
+      id: "1",
+      "No. Serie Equipo": "1234",
+      "Modelo Monitor": "1234",
+      "No. Serie Monitor": "1234",
+      "No. Serie Teclado": "1234",
+      "No. Serie Mouse": "1234",
+    },
+  ];
+
+  const laptopData = [
+    {
+      id: "1",
+      "No. Serie Equipo": "1234",
+      "No. Serie cargador": "1234",
+    },
+  ];
+
   const handleLogout = () => {
-    // TODO: Llamar a tu API para cerrar sesión
-    // await fetch('/api/logout', { method: 'POST' });
-    
-    // Limpiar token si lo usas
-    localStorage.removeItem('token');
     navigate("/");
   };
+
+  const handleAddEquipment = () => {
+    // TODO: Navegar a formulario de agregar equipo
+    console.log("Agregar equipo");
+  };
+
+  const handleEditEquipment = (id: string) => {
+    // TODO: Navegar a formulario de editar equipo
+    console.log("Editar equipo:", id);
+  };
+
+  const handleDeleteEquipment = (id: string) => {
+    // TODO: Eliminar equipo
+    console.log("Eliminar equipo:", id);
+  };
+
   return (
     <>
-      <header>
-        <img
-          className="banner"
-          src="/Banner_RCA.png"
-          alt=""
-          style={{ backgroundSize: "cover" }}
-        />
-      </header>
-      <button className="btn-derecha" onClick={handleLogout}>
-        <span className="icono">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
-            fill="white"
-            viewBox="0 0 24 24"
-          >
-            <rect
-              x="2"
-              y="4"
-              width="13"
-              height="16"
-              rx="2"
-              fill="none"
-              stroke="white"
-              strokeWidth="2"
-            />
-            <path
-              d="M9 12h11m0 0l-3-3m3 3l-3 3"
-              stroke="white"
-              strokeWidth="2"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
-        <span className="texto">
-          CERRAR
-          <br />
-          SESIÓN
-        </span>
-      </button>
+      <Header bannerSrc="/Banner_RCA.png" onLogout={handleLogout} />
       <main>
         <br />
         <br />
         <br />
         <h1 style={{ textAlign: "center" }}>Perfil de Usuario</h1>
-        <div className="centrar">
-          <div className="datos">
-            <table className="datos_usuario">
-              <tbody>
-                <tr>
-                  <td style={{ verticalAlign: "top", paddingRight: "20px" }}>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <strong>No. Empleado: </strong>12345
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>Nombres: </strong>Alejandro
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>Apellidos: </strong>Rodríguez Perez
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>Puesto: </strong>Secretario
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>Área: </strong>1
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                  <td style={{ verticalAlign: "top" }}>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <strong>Correo: </strong>alejandro123@gmail.com
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>Teléfono: </strong>55 1234 1234
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>Extensión: </strong>1234
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>Piso: </strong>5
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <UserProfile userData={userData} />
         <div className="boton_añadir">
-          <a href="work-equipment.html">
-            <button className="boton_accesar">Añadir equipo</button>
-          </a>
+          <Button className="boton_accesar" onClick={handleAddEquipment}>
+            Añadir equipo
+          </Button>
         </div>
-        <h2 className="sub" style={{ textAlign: "center" }}>
-          Equipo de escritorio
-        </h2>
-        <table className="equipo">
-          <thead>
-            <tr className="encabezado">
-              <th>No. Serie Equipo</th>
-              <th>Modelo Monitor</th>
-              <th>No. Serie Monitor</th>
-              <th>No. Serie Teclado</th>
-              <th>No. Serie Mouse</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1234</td>
-              <td>1234</td>
-              <td>1234</td>
-              <td>1234</td>
-              <td>1234</td>
-              <td>
-                <a href="desktop-edit.html">
-                  <button className="Acciones">Editar</button>
-                </a>
-                <a href="desktop-unregister.html">
-                  <button className="Acciones">Dar de baja</button>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <h2 className="sub" style={{ textAlign: "center" }}>
-          Equipo de Laptop
-        </h2>
-        <table className="equipo">
-          <thead>
-            <tr className="encabezado">
-              <th>No. Serie Equipo</th>
-              <th>No. Serie cargador</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1234</td>
-              <td>1234</td>
-              <td>
-                <a href="laptop-edit.html">
-                  <button className="Acciones">Editar</button>
-                </a>
-                <a href="laptop-unregister.html">
-                  <button className="Acciones">Dar de baja</button>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <EquipmentTable
+          title="Equipo de escritorio"
+          headers={[
+            "No. Serie Equipo",
+            "Modelo Monitor",
+            "No. Serie Monitor",
+            "No. Serie Teclado",
+            "No. Serie Mouse",
+          ]}
+          data={desktopData}
+          onEdit={handleEditEquipment}
+          onDelete={handleDeleteEquipment}
+        />
+        <EquipmentTable
+          title="Equipo de Laptop"
+          headers={["No. Serie Equipo", "No. Serie cargador"]}
+          data={laptopData}
+          onEdit={handleEditEquipment}
+          onDelete={handleDeleteEquipment}
+        />
       </main>
       <br />
     </>

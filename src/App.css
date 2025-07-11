@@ -1,13 +1,13 @@
 @font-face {
   /* Fuente personalizada Patria Regular */
   font-family: "Patria Regular";
-  src: url("../font/Patria_Regular.otf") format("truetype");
+  src: url("./font/Patria_Regular.otf") format("opentype");
 }
 
 @font-face {
   /* Fuente personalizada Noto Sans Semibold */
   font-family: "Noto Sans Semibold";
-  src: url("../font/NotoSans-SemiBold.ttf") format("truetype");
+  src: url("./font/NotoSans-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @font-face {
   /* Fuente personalizada Noto Sans Light */
   font-family: "Noto Sans light";
-  src: url("../font/NotoSans-Light.ttf") format("truetype");
+  src: url("./font/NotoSans-Light.ttf") format("truetype");
 }
 
 strong {
