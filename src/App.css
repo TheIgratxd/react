@@ -1,0 +1,364 @@
+@font-face {
+  /* Fuente personalizada Patria Regular */
+  font-family: "Patria Regular";
+  src: url("../font/Patria_Regular.otf") format("truetype");
+}
+
+@font-face {
+  /* Fuente personalizada Noto Sans Semibold */
+  font-family: "Noto Sans Semibold";
+  src: url("../font/NotoSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  /* Fuente personalizada Noto Sans Light */
+  font-family: "Noto Sans light";
+  src: url("../font/NotoSans-Light.ttf") format("truetype");
+}
+
+strong {
+  font-family: "Noto Sans Semibold", Arial, sans-serif; /* Negritas con fuente semibold */
+}
+
+body,
+html {
+  font-family: "Noto Sans light", Arial, sans-serif; /* Fuente base para toda la página */
+  height: 100%; /* Ocupa todo el alto */
+  margin: 0; /* Sin margen */
+  padding: 0; /* Sin padding */
+}
+.split-container {
+  display: flex; /* Contenedor flexible para dividir la pantalla */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+.split {
+  flex: 1; /* Cada split ocupa el mismo espacio */
+  display: flex;
+  flex-direction: column; /* Organiza el contenido en columna */
+}
+
+.left {
+  background-image: url("/fondo-izquierda.jpeg"); /* Imagen de fondo para el lado izquierdo */
+  background-size: cover; /* Cubre todo el espacio */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* No repite la imagen */
+  color: #fff; /* Texto blanco */
+}
+.right {
+  text-align: center; /* Centra el texto */
+  background: #f3f5f4; /* Fondo gris claro */
+  color: #333; /* Texto gris oscuro */
+  justify-content: center; /* Centra verticalmente el contenido */
+}
+.split-header {
+  font-size: 2rem; /* Tamaño de fuente grande */
+  font-weight: bold; /* Texto en negrita */
+  padding: 30px 20px 10px 20px; /* Espaciado alrededor del encabezado */
+}
+.split-content {
+  padding: 20px; /* Espaciado interno */
+  flex: 1; /* Ocupa el espacio restante */
+}
+
+.logo-container {
+  text-align: end; /* Alinea el logo a la derecha */
+}
+
+/* --------- Lado derecho: estilos específicos --------- */
+
+h1 {
+  font-family: "Patria Regular", Arial, sans-serif; /* Fuente personalizada */
+  font-size: 2.5rem; /* Tamaño grande */
+  color: #5d0035; /* Color vino */
+}
+
+h2 {
+  font-family: "Patria Regular", Arial, sans-serif; /* Igual que h1 */
+  font-size: 2.5rem;
+  color: #5d0035;
+}
+
+.boton_accesar {
+  background-color: #5d0035; /* Fondo vino */
+  color: white; /* Texto blanco */
+  font-family: "Noto Sans Semibold", Arial, sans-serif; /* Fuente semibold */
+  font-weight: 600; /* Negrita */
+  padding: 12px 25px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de mano */
+  font-size: 1rem; /* Tamaño de fuente */
+  transition: background-color 0.3s ease; /* Transición suave */
+  margin-top: 25px; /* Espacio arriba */
+  text-align: center; /* Centra el texto */
+}
+
+.boton_accesar:hover {
+  background-color: #7a0046; /* Fondo más oscuro al pasar el mouse */
+}
+
+.input-usuario-Contraseña {
+  width: 100%; /* Ocupa todo el ancho */
+  max-width: 300px; /* Máximo 300px */
+  margin-left: 1rem; /* Margen izquierdo */
+  position: relative; /* Para posicionar elementos hijos */
+  font-family: "Noto Sans light", Arial, sans-serif; /* Fuente ligera */
+}
+
+.input-usuario-Contraseña input {
+  font-family: noto sans, Arial, sans-serif; /* Fuente base */
+  border: none; /* Sin borde */
+  border-bottom: 1px solid #7a0046; /* Solo borde inferior */
+  padding: 5px 0; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  color: #000000; /* Texto negro */
+  background-color: transparent; /* Fondo transparente */
+  outline: none; /* Sin contorno al enfocar */
+  width: 100%; /* Ocupa todo el ancho */
+  box-sizing: border-box; /* Incluye padding y borde en el ancho */
+}
+
+.input-usuario-Contraseña input::placeholder {
+  font-family: "Noto Sans Semibold", Arial, sans-serif; /* Fuente semibold para placeholder */
+  font-weight: 600; /* Negrita */
+  color: #8e6814; /* Color marrón claro */
+}
+
+.agrupacion-inputs {
+  display: flex; /* Flexbox para agrupar inputs */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  width: 100%; /* Ocupa todo el ancho */
+}
+
+.logo-header {
+  width: 40%; /* Ancho del logo */
+}
+
+.logo {
+  width: 24px; /* Tamaño de los iconos pequeños */
+  height: 24px;
+  margin-right: 8px; /* Espacio entre icono e input */
+}
+
+/* --------- Lado izquierdo: estilos específicos --------- */
+
+.logo-izquierda {
+  justify-content: center; /* Centra el logo */
+}
+
+.split.left .split-content {
+  display: flex; /* Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100%; /* Ocupa todo el alto */
+}
+
+.toggle-button {
+  display: flex; /* Flexbox para el botón de mostrar/ocultar */
+  position: absolute; /* Posición absoluta */
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%); /* Ajuste fino para centrar */
+  right: 12px; /* Alineado a la derecha */
+  cursor: pointer; /* Cursor de mano */
+}
+
+.eye-icon {
+  width: 20px; /* Tamaño del icono de ojo */
+  height: 20px;
+}
+
+/* --------- Pagina Datos --------- */
+
+.datos {
+  text-align: left; /* Texto alineado a la izquierda */
+  color: rgb(0, 0, 0); /* Texto negro */
+  border-radius: 1rem; /* Bordes redondeados */
+  display: inline-block; /* Bloque en línea */
+  padding: 10px; /* Espaciado interno */
+}
+
+.equipo,
+.equipo td,
+.equipo th {
+  border: 1px solid #5d0035; /* Bordes color vino */
+  border-collapse: collapse; /* Colapsa los bordes */
+}
+
+.equipo {
+  border-collapse: separate; /* Bordes separados */
+  border-spacing: 0; /* Sin espacio entre celdas */
+  width: 90%; /* Ancho del 90% */
+  margin: 20px auto; /* Centrado con margen */
+  border-radius: 1rem; /* Bordes redondeados */
+  overflow: hidden; /* Oculta el desbordamiento */
+}
+
+.equipo th,
+.equipo td {
+  border: 1px solid #5d0035; /* Bordes color vino */
+  padding: 10px 0; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+}
+
+.equipo thead tr.encabezado th {
+  background-color: #5d0035; /* Fondo vino para encabezado */
+  color: #fff; /* Texto blanco */
+  font-weight: bold; /* Negrita */
+  font-size: 1.2rem; /* Tamaño de fuente */
+  border-bottom: none; /* Sin borde inferior */
+}
+
+.equipo tbody tr:first-child td {
+  border-top: 1px solid #5d0035; /* Borde superior en la primera fila */
+}
+
+.centrar {
+  text-align: center; /* Centra el texto */
+}
+
+.datos_usuario {
+  padding: 0.1rem; /* Espaciado interno */
+  margin: auto; /* Centrado automático */
+  border-color: #5d0035; /* Borde color vino */
+  border-style: solid; /* Borde sólido */
+  border-radius: 1rem; /* Bordes redondeados */
+  border-width: 2px; /* Grosor del borde */
+}
+
+.datos_usuario-baja {
+  width: 600px; /* O el ancho que desees */
+  max-width: 90vw; /* Opcional: para que no se pase del ancho de la pantalla */
+}
+
+.datos_usuario td {
+  padding: 10px 30px; /* Espaciado interno */
+  line-height: 2; /* Altura de línea */
+  font-size: 1.1rem; /* Tamaño de fuente */
+}
+
+.datos_usuario tr {
+  height: 2.5em; /* Altura de la fila */
+}
+
+.boton_añadir {
+  text-align: center; /* Centra el botón */
+}
+
+.Acciones {
+  border: none; /* Sin borde */
+  background: none; /* Sin fondo */
+  color: #000000; /* Texto negro */
+  font-family: "Noto Sans Semibold", Arial, sans-serif; /* Fuente semibold */
+  font-size: 1rem; /* Tamaño de fuente */
+  cursor: pointer; /* Cursor de mano */
+  padding: 0; /* Sin padding */
+}
+
+.encabezado {
+  color: white; /* Texto blanco */
+  background-color: #5d0035; /* Fondo vino */
+}
+
+.btn-derecha {
+  /* Botón alineado a la derecha y estilizado */
+  position: absolute; /* Posiciona el botón de forma absoluta respecto al contenedor */
+  top: 8rem; /* Distancia desde la parte superior (más abajo en la página) */
+  right: 20px; /* Distancia desde el borde derecho */
+  display: flex; /* Usa flexbox para alinear contenido interno */
+  align-items: center; /* Centra verticalmente el contenido del botón */
+  gap: 12px; /* Espacio entre el icono y el texto */
+  padding: 10px 24px; /* Espaciado interno del botón */
+  background-color: #9c7a2b; /* Color de fondo marrón */
+  color: #fff; /* Color del texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 6px; /* Bordes redondeados */
+  font-size: 18px; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: background 0.2s; /* Transición suave al cambiar el fondo */
+}
+
+.btn-derecha:hover {
+  /* Estilo al pasar el mouse */
+  background-color: #7a5f20; /* Color de fondo más oscuro al hacer hover */
+}
+
+.btn-derecha .icono {
+  /* Contenedor del icono SVG */
+  display: flex; /* Usa flexbox para centrar el icono */
+  align-items: center; /* Centra verticalmente el icono */
+}
+
+.btn-derecha .texto {
+  /* Contenedor del texto */
+  display: flex; /* Usa flexbox para el texto */
+  flex-direction: column; /* Coloca el texto en columna (dos líneas) */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.1; /* Espaciado entre líneas */
+  font-family: inherit; /* Hereda la fuente del botón */
+}
+
+/* --------- Pagina Editar Escritorio --------- */
+
+.datos {
+  text-align: center;
+}
+
+.titulo {
+  font-family: "Patria Regular", Arial, sans-serif; /* Fuente personalizada */
+  font-size: 2.5rem; /* Tamaño grande */
+  color: #5d0035; /* Color vino */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  text-align: center;
+}
+
+/* --------- Pagina Dar de baja --------- */
+
+.datos_usuario-baja {
+  width: 25rem; /* O el ancho que desees */
+  max-width: 90vw; /* Opcional: para que no se pase del ancho de la pantalla */
+}
+
+.img-equipo {
+  width: 120px; /* Cambia el tamaño según lo que necesites */
+  height: 120px;
+  object-fit: cover; /* Mantiene el recorte y la proporción */
+  border-radius: 8px; /* Opcional: bordes redondeados */
+}
+
+.tabla_sobretabla {
+  padding: 0.1rem; /* Espaciado interno */
+  margin: auto; /* Centrado automático */
+  border-color: #ffffff; /* Borde color vino */
+  border-style: solid; /* Borde sólido */
+  border-radius: 1rem; /* Bordes redondeados */
+  border-width: 2px; /* Grosor del borde */
+}
+
+.banner {
+  width: 100%;
+}
+
+.btn-izquierda {
+  /* Botón alineado a la derecha y estilizado */
+  position: absolute; /* Posiciona el botón de forma absoluta respecto al contenedor */
+  top: 8rem; /* Distancia desde la parte superior (más abajo en la página) */
+  left: 20px; /* Distancia desde el borde derecho */
+  display: flex; /* Usa flexbox para alinear contenido interno */
+  align-items: center; /* Centra verticalmente el contenido del botón */
+  gap: 12px; /* Espacio entre el icono y el texto */
+  padding: 10px 24px; /* Espaciado interno del botón */
+  background-color: #9c7a2b; /* Color de fondo marrón */
+  color: #fff; /* Color del texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 6px; /* Bordes redondeados */
+  font-size: 18px; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: background 0.2s; /* Transición suave al cambiar el fondo */
+}
