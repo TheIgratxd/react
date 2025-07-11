@@ -4,6 +4,8 @@ import "./App.css";
 
 function App() {
   const [showPassword, setShowPassword] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const togglePassword = () => {
@@ -12,7 +14,6 @@ function App() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí puedes agregar validación de login si es necesario
     navigate("/equipment");
   };
 
@@ -50,6 +51,8 @@ function App() {
                     id="usuario-input"
                     name="Usuario"
                     placeholder="USUARIO"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     required
                   />
                 </div>
@@ -63,6 +66,8 @@ function App() {
                     id="password-field"
                     name="Contraseña"
                     placeholder="CONTRASEÑA"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                   />
                   <div className="toggle-button" onClick={togglePassword}>

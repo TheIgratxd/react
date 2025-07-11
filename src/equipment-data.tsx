@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
@@ -6,6 +6,11 @@ function Equipment() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    // TODO: Llamar a tu API para cerrar sesión
+    // await fetch('/api/logout', { method: 'POST' });
+    
+    // Limpiar token si lo usas
+    localStorage.removeItem('token');
     navigate("/");
   };
   return (
