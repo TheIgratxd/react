@@ -39,7 +39,7 @@ function App() {
             </div>
           </header>
           <div className="split-content">
-            <h1>Registro Computo</h1>
+            <h1>Registro Computo Arrendado</h1>
             <br />
             <form onSubmit={handleLogin}>
               <InputField
