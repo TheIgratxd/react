@@ -47,6 +47,7 @@ const EquipmentTable: React.FC<EquipmentTableProps> = ({
                 >
                   Editar
                 </Button>
+                <br />
                 <Button
                   className="Acciones"
                   onClick={() => onDelete && onDelete(item.id)}

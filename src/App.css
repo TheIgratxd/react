@@ -176,7 +176,10 @@ h2 {
   text-align: left; /* Texto alineado a la izquierda */
   color: rgb(0, 0, 0); /* Texto negro */
   border-radius: 1rem; /* Bordes redondeados */
-  display: inline-block; /* Bloque en línea */
+  display: flex; /* Cambié a flexbox */
+  flex-wrap: wrap; /* Permite que se envuelvan si no caben */
+  gap: 20px; /* Espacio entre elementos */
+  justify-content: center; /* Centra horizontalmente */
   padding: 10px; /* Espaciado interno */
 }
 
@@ -217,6 +220,7 @@ h2 {
 
 .centrar {
   text-align: center; /* Centra el texto */
+  justify-content: space-around;
 }
 
 .datos_usuario {
