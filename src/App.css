@@ -1,13 +1,13 @@
 @font-face {
   /* Fuente personalizada Patria Regular */
   font-family: "Patria Regular";
-  src: url("./font/Patria_Regular.otf") format("opentype");
+  src: url("./../public/font/Patria_Regular.otf") format("opentype");
 }
 
 @font-face {
   /* Fuente personalizada Noto Sans Semibold */
   font-family: "Noto Sans Semibold";
-  src: url("./font/NotoSans-SemiBold.ttf") format("truetype");
+  src: url("./../public/font/NotoSans-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @font-face {
   /* Fuente personalizada Noto Sans Light */
   font-family: "Noto Sans light";
-  src: url("./font/NotoSans-Light.ttf") format("truetype");
+  src: url("./../public/font/NotoSans-Light.ttf") format("truetype");
 }
 
 strong {
@@ -138,9 +138,9 @@ h2 {
 }
 
 .logo {
-  width: 24px; /* Tamaño de los iconos pequeños */
-  height: 24px;
-  margin-right: 8px; /* Espacio entre icono e input */
+  width: 47px; /* Tamaño de los iconos pequeños */
+  height: 47px;
+  margin-right: 10px; /* Espacio entre icono e input */
 }
 
 /* --------- Lado izquierdo: estilos específicos --------- */
