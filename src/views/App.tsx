@@ -1,19 +1,36 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import InputField from "../components/InputField";
-import PasswordInput from "../components/PasswordInput";
 import Button from "../components/Button";
 import Logo from "../components/Logo";
 import "./../App.css";
+import Password from "../components/Password";
 
 function App() {
   const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const usuario: string = "Diego";
+  let registeryes: boolean = false;
+
+  if (username === usuario) {
+    registeryes = true;
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate("/equipment");
+    if (username.trim() !== "") {
+      setShowPassword(true);
+    }
+  };
+
+  const handlePasswordSubmit = (password: string, confirmPassword?: string) => {
+    console.log("Datos recibidos en App:");
+    console.log("Username:", username);
+    console.log("Password:", password);
+    if (confirmPassword) {
+      console.log("Confirm Password:", confirmPassword);
+    }
+    // Aquí puedes hacer lo que necesites con los datos
   };
 
   return (
@@ -41,7 +58,7 @@ function App() {
           <div className="split-content">
             <h1>Registro Computo Arrendado</h1>
             <br />
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleSubmit}>
               <InputField
                 type="text"
                 placeholder="USUARIO"
@@ -53,19 +70,20 @@ function App() {
                 required
               />
               <br />
-              <PasswordInput
-                placeholder="CONTRASEÑA"
-                value={password}
-                onChange={setPassword}
-                icon="/logo_candado.jpeg"
-                id="password-field"
-                name="Contraseña"
-                required
-              />
-              <Button type="submit" value="login" className="boton_accesar">
-                ACCESAR
-              </Button>
+              {!showPassword && (
+                <Button type="submit" value="login" className="boton_accesar">
+                  ACCESAR
+                </Button>
+              )}
             </form>
+            {showPassword && (
+              <div>
+                <Password
+                  register={registeryes}
+                  onSubmit={handlePasswordSubmit}
+                />
+              </div>
+            )}
           </div>
         </section>
       </div>
